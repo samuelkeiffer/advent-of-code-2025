@@ -16,7 +16,7 @@ fn part2(file: &str) -> u32 {
         let mut dist_test = rot.dist;
         if dist_test > 100 {
             count += (dist_test as u32) / 100;
-            dist_test = dist_test % 100;
+            dist_test %= 100;
         }
         let dist = if rot.left { -dist_test } else { dist_test };
         pos = (pos + dist + 100) % 100;
@@ -43,15 +43,18 @@ fn part1(file: &str) -> u32 {
 
 fn parse_file(file: &str) -> Vec<Rotation> {
     let rotations = read_file(file);
-    rotations.lines().filter_map(|line| {
-        let (dir, dist) = line.split_at(1);
-        let dist: i32 = dist.parse().unwrap();
-        match dir {
-            "L" => Some(Rotation { left: true, dist }),
-            "R" => Some(Rotation { left: false, dist }),
-            _ => None,
-        }
-    }).collect::<Vec<Rotation>>()
+    rotations
+        .lines()
+        .filter_map(|line| {
+            let (dir, dist) = line.split_at(1);
+            let dist: i32 = dist.parse().unwrap();
+            match dir {
+                "L" => Some(Rotation { left: true, dist }),
+                "R" => Some(Rotation { left: false, dist }),
+                _ => None,
+            }
+        })
+        .collect::<Vec<Rotation>>()
 }
 
 struct Rotation {
