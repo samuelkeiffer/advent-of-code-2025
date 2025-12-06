@@ -1,10 +1,10 @@
 use crate::*;
 
 pub fn run() {
-    assert_eq!(part1("assets/day1_test.txt"), 3);
-    dbg!(part1("assets/day1.txt"));
-    assert_eq!(part2("assets/day1_test.txt"), 6);
-    dbg!(part2("assets/day1.txt"));
+    assert_eq!(part1("assets/day01_test.txt"), 3);
+    dbg!(part1("assets/day01.txt"));
+    assert_eq!(part2("assets/day01_test.txt"), 6);
+    dbg!(part2("assets/day01.txt"));
 }
 
 fn part2(file: &str) -> u32 {
