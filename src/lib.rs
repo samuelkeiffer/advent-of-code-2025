@@ -1,5 +1,8 @@
 pub use itertools::Itertools;
-pub use std::{collections::HashSet, fs};
+pub use std::{
+    collections::{HashMap, HashSet},
+    fs,
+};
 
 pub mod days;
 pub mod util;
