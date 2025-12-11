@@ -1,4 +1,6 @@
 pub use itertools::Itertools;
+pub use microlp::{ComparisonOp, LinearExpr, OptimizationDirection, Problem};
+pub use pathfinding::prelude::astar;
 pub use std::{
     collections::{BTreeMap, HashMap, HashSet},
     fs,
